@@ -5,14 +5,23 @@ I have created two directories, one for Ansible playbook and other for Terraform
 Ansible playbook is pretty straight forward, I have just added the task to deploy webserver.
 
 I have created the module structure for tf files, I have not directly added the variables in the module as according to the task most parameters will remain same. However, the variables are properly defined with default values in the webserver module and if needed all the vars can be passed directly in the main.tf like below :
+
 region = "ap-south-1"
+
 route53_zone_name = "test.example.com"
+
 bucket_name = "bucket-for-uploading-ansible-playbook"
+
 vpc_cidr = "10.0.0.0/16"
+
 public_subnet_1_cidr = "10.0.1.0/24"
+
 public_subnet_2_cidr = "10.0.2.0/24"
+
 private_subnet_cidr = "10.0.3.0/24"
+
 route_table_cidr = "0.0.0.0/0"
+
 
 
 Terraform code will work in every region and account as it is not tightly coupled.
